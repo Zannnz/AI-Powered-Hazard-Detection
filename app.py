@@ -10,6 +10,25 @@ from yolov8_detector import YOLOv8Detector
 # Ensure this file exists in your project directory
 MODEL_WEIGHTS = 'yolov8n.pt' 
 
+# Custom CSS for better drag-and-drop UI
+st.markdown("""
+    <style>
+    [data-testid="stFileUploader"] {
+        width: 100%;
+    }
+    [data-testid="stFileUploader"] section {
+        padding: 2rem;
+        border: 2px dashed #4CAF50;
+        border-radius: 10px;
+        background-color: #1e1e1e;
+    }
+    [data-testid="stFileUploader"] section:hover {
+        border-color: #66BB6A;
+        background-color: #2a2a2a;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # --- Initialize Detector (Caching for performance) ---
 @st.cache_resource
 def load_detector():
